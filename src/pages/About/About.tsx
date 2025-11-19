@@ -1,4 +1,3 @@
-import React from "react";
 import origin from "../../assets/media/jennie-jonathan-origin.png";
 
 const About = () => {

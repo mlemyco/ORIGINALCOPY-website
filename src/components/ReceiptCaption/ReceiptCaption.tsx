@@ -1,4 +1,3 @@
-import React from "react";
 import "./ReceiptCaption.scss";
 
 const ReceiptCaption = ({

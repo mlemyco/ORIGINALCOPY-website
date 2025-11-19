@@ -1,4 +1,3 @@
-import React from "react";
 import "./Portfolio.scss";
 import fallenAngel from "../../assets/media/fallen-angel.jpg";
 import fifthVessel from "../../assets/media/fifth-vessel.jpg";

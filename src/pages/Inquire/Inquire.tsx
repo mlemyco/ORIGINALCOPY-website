@@ -1,4 +1,3 @@
-import React from "react";
 import "./Inquire.scss";
 import Button from "../../components/Button/Button";
 
