@@ -1,0 +1,39 @@
+.receipt-caption {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  width: 200px;
+  height: 300px;
+  text-align: center;
+  padding: 20px;
+  right: 30px;
+  top: 50%;
+  z-index: 5;
+
+  h4 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .receipt-caption {
+    top: 50px;
+    width: 50%;
+    height: 500px;
+    padding: 30px;
+
+    h4 {
+      font-size: 36px;
+    }
+
+    p {
+      font-size: 28px;
+    }
+  }
+}

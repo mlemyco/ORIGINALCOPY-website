@@ -1,0 +1,24 @@
+.slideshow {
+  //   position: absolute;
+  //   height: 100%;
+  //   overflow-x: hidden;
+  //   left: 0;
+  //   width: 200%;
+  height: 100%;
+  //   animation: slide 5s linear infinite;
+}
+
+@keyframes slide {
+  //   0% {
+  //     left: 0;
+  //   }
+  //   100% {
+  //     left: -100%;
+  //   }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
