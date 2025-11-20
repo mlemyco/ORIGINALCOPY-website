@@ -3,8 +3,8 @@ import "./Home.scss";
 
 const Home = () => {
   return (
-    <div id="home" className="section h-screen gap-y-40">
-      <div className="title">
+    <div id="home" className="section h-screen flex flex-col py-8">
+      <div className="title flex-1 flex flex-col justify-center">
         <h1>ORIGINALCOPY</h1>
         <div className="flex justify-between">
           <h3>houston's</h3>
