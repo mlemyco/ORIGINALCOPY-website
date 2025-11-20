@@ -10,26 +10,27 @@ body {
 }
 
 h1 {
-  font-size: 96px;
+  font-size: 88px;
 }
 
 h2 {
-  font-size: 68px;
+  font-size: 56px;
 }
 
 h3 {
-  font-size: 48px;
+  font-size: 40px;
 }
 
 h4 {
-  font-size: 36px;
+  font-size: 28px;
 }
 
 p {
-  font-size: 48px;
+  font-size: 40px;
 }
 
-a {
+a,
+.underline {
   text-decoration: underline;
 }
 
@@ -85,13 +86,15 @@ a {
 }
 
 .subtitle {
-  font-size: 20px;
+  font-size: 32px;
 }
 
 input,
 textarea {
-  padding: 10px 15px;
+  font-family: "OT Neue Montreal Squeezed", sans-serif;
+  padding: 5px 10px;
   border: black solid 1px;
+  font-size: 24px;
 }
 
 @media screen and (max-width: 1024px) {

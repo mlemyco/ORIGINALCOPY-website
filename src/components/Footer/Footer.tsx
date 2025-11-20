@@ -1,11 +1,20 @@
 import "./Footer.scss";
 
-const Footer = () => {
+const Footer = ({
+  setIsNewsletterSubscribeOpen,
+}: {
+  setIsNewsletterSubscribeOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   return (
     <footer className="flex purple-bg py-2 px-5">
-      <a href="" className="flex-1 flex justify-center">
-        SUBSCRIBE TO OUR NEWSLETTER
-      </a>
+      <div className="flex-1 flex justify-center">
+        <p
+          className="underline"
+          onClick={() => setIsNewsletterSubscribeOpen(true)}
+        >
+          SUBSCRIBE TO OUR NEWSLETTER
+        </p>
+      </div>
 
       <div className="socials flex gap-3">
         <a href="https://www.instagram.com/originalcopyphotobooth/">
