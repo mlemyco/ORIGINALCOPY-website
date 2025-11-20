@@ -11,18 +11,27 @@ import example2 from "./assets/media/examples/example-2.png";
 import example3 from "./assets/media/examples/example-3.png";
 import example4 from "./assets/media/examples/example-4.png";
 import example5 from "./assets/media/examples/example-5.png";
+import NewsletterPopup from "./pages/NewsletterPopup/NewsletterPopup";
+import { useState } from "react";
 
 function App() {
   const examples = [example1, example2, example3, example4, example5];
 
+  const [isNewsletterSubscribeOpen, setIsNewsletterSubscribeOpen] =
+    useState(false);
+
   return (
     <>
+      {isNewsletterSubscribeOpen && (
+        <NewsletterPopup setIsOpen={setIsNewsletterSubscribeOpen} />
+      )}
+
       <Home />
       <Portfolio />
       <About />
       <Inquire />
       <Slideshow elements={examples} height={250} />
-      <Footer />
+      <Footer setIsNewsletterSubscribeOpen={setIsNewsletterSubscribeOpen} />
     </>
   );
 }

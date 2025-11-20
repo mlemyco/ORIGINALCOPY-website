@@ -1,8 +1,17 @@
 import "./Button.scss";
 
-const Button = ({ children }: { children: React.ReactNode }) => {
+const Button = ({
+  onClickFn,
+  children,
+}: {
+  onClickFn: () => void;
+  children: React.ReactNode;
+}) => {
   return (
-    <button className="purple-bg rounded-full py-3 px-10 size-fit hover:cursor-pointer">
+    <button
+      onClick={onClickFn}
+      className="purple-bg rounded-full py-2 px-10 size-fit hover:cursor-pointer"
+    >
       {children}
     </button>
   );
