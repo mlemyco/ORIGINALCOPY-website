@@ -1,43 +1,80 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "../../components/Modal/Modal";
 import Button from "../../components/Button/Button";
+import newsletterModalBg from "../../assets/media/7.png";
 
 const NewsletterPopup = ({
-  setIsOpen,
+    setIsOpen,
 }: {
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const newsletterModalBg =
-    "https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTExL3JtNjA0LWVsZW1lbnQtMDYwMS5qcGc.jpg";
+    const [email, setEmail] = useState("");
+    const [isEmailValid, setIsEmailValid] = useState(false);
+    const [isSubscribed, setIsSubscribed] = useState(false);
 
-  const joinNewsletter = () => {
-    return;
-  };
+    const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setEmail(e.target.value);
+        setIsEmailValid(e.target.validity.valid);
+    };
 
-  return (
-    <>
-      <Modal backgroundImage={newsletterModalBg} setIsOpen={setIsOpen}>
-        <h2>SIGN UP FOR OUR NEWSLETTER</h2>
-        <h4>to follow our houston whereabouts</h4>
+    const subscribeToNewsletter = async () => {
+        // fetch("/subscribers", {
+        //     method: "GET",
+        //     headers: { "Content-Type": "application/json" },
+        // }).then((response) => {
+        //     console.log(response.json());
+        // });
 
-        <input
-          id="subscribe-email"
-          className="w-full bg-white"
-          type="text"
-          placeholder="your email address..."
-        />
-        <Button onClickFn={joinNewsletter}>JOIN</Button>
+        console.log("subscribing");
+        setIsSubscribed(true);
 
-        <h4>we promise not to spam</h4>
+        //     fetch("/subscribers", {
+        // method: "POST",
+        //         headers: { "Content-Type": "application/json" },
+        //         body: JSON.stringify({ email }),
+        //     })
+        //     .then((response) => {
+        //         if (response.status >= 200 && response.status < 300) {
+        //             setIsSubscribed(true);
+        //         }
+        //     });
+    };
 
-        <img
-          src="https://static.vecteezy.com/system/resources/previews/048/230/807/non_2x/barcode-black-color-for-payment-vector.jpg"
-          alt=""
-          className="px-8"
-        />
-      </Modal>
-    </>
-  );
+    return (
+        <>
+            <Modal backgroundImage={newsletterModalBg} setIsOpen={setIsOpen}>
+                <h2>SIGN UP FOR OUR NEWSLETTER</h2>
+                <h4>to follow our houston whereabouts</h4>
+
+                <input
+                    id="subscribe-email"
+                    className="w-full bg-white"
+                    type="email"
+                    placeholder="your email address..."
+                    onChange={handleEmailChange}
+                />
+
+                {isSubscribed ? (
+                    <h3>SUBSCRIBED!</h3>
+                ) : (
+                    <Button
+                        onClickFn={subscribeToNewsletter}
+                        isDisabled={email == "" || !isEmailValid}
+                    >
+                        JOIN
+                    </Button>
+                )}
+
+                <h4>we promise not to spam</h4>
+
+                <img
+                    src="https://static.vecteezy.com/system/resources/previews/048/230/807/non_2x/barcode-black-color-for-payment-vector.jpg"
+                    alt=""
+                    className="px-8"
+                />
+            </Modal>
+        </>
+    );
 };
 
 export default NewsletterPopup;

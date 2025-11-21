@@ -1,3 +1,7 @@
 button {
-  font-size: 36px;
+    font-size: 36px;
+
+    &:disabled {
+        opacity: 0.5;
+    }
 }

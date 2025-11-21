@@ -14,8 +14,8 @@ const Slideshow = ({
     >
       <div className="slideshow flex justify-center gap-10">
         {/* Render the list twice to make it look infinite */}
-        {elements.map((element) => {
-          return <img src={element} alt="" />;
+        {elements.map((element, index) => {
+          return <img key={index} src={element} alt="" />;
         })}
 
         {/* {elements.map((element) => {

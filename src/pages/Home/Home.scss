@@ -1,28 +1,112 @@
 #home {
-  background-image: url("../../assets/media/printer.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+    background-image: url("/src/assets/media/printer.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: none;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 15%;
+        width: 200px;
+        height: 200px;
+        background-image: url("/src/assets/media/4.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        scale: 2;
+        z-index: -1;
+        animation: rotateClockwise 30s linear infinite;
+    }
+
+    &::after {
+        content: "";
+        background-image: url("/src/assets/media/4.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        display: block;
+        width: 200px;
+        height: 200px;
+        right: 0;
+        bottom: 20%;
+        scale: 2;
+        z-index: -1;
+        animation: rotateCounterClockwise 30s linear infinite;
+    }
+
+    #star-roll {
+        position: absolute;
+        right: -350px;
+        bottom: 10%;
+        scale: 0.75;
+    }
 }
 
-.title {
-  transform: scale(1.4);
+.content {
+    width: 50%;
+    max-width: 800px;
+    height: 90%;
 
-  h1 {
-    font-size: 120px;
-    line-height: 0.6;
-  }
+    .title {
+        transform: scale(1.4);
+
+        h1 {
+            font-size: 96px;
+            line-height: 0.6;
+        }
+    }
+
+    nav {
+        width: 100%;
+        text-decoration: underline;
+        z-index: 5;
+    }
 }
 
-nav {
-  font-size: 72px;
-  text-decoration: underline;
-  z-index: 5;
+@keyframes rotateClockwise {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateCounterClockwise {
+    0% {
+        transform: rotate(-30deg);
+    }
+    100% {
+        transform: rotate(-330deg);
+    }
 }
 
 @media screen and (max-width: 1024px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
+    #home {
+        &::before {
+            left: 0;
+        }
+
+        &::after {
+            right: 0;
+        }
+
+        #star-roll {
+            right: -350px;
+        }
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
 }

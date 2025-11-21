@@ -1,52 +1,47 @@
 import "./Portfolio.scss";
 import fallenAngel from "../../assets/media/fallen-angel.jpg";
-import fifthVessel from "../../assets/media/fifth-vessel.jpg";
+import fifthVessel from "../../assets/media/Isa_Matcha_Image.png";
 import gyulaKosice from "../../assets/media/gyula-kosice.jpg";
-import ReceiptCaption from "../../components/ReceiptCaption/ReceiptCaption";
+import PortfolioCard from "../../components/PortfolioCard/PortfolioCard";
 
 const Portfolio = () => {
-  return (
-    <div className="section" id="portfolio">
-      <div className="heading">
-        <h1>PORTFOLIO</h1>
-        <h2>OUR RECEIPTS</h2>
-      </div>
+    const portfolioEntries = [
+        [
+            fifthVessel,
+            "ORIGINALCOPY x FIFTH VESSEL",
+            "FOR THEIR GRAND OPENING EVENT WITH ISA MATCHA",
+        ],
+        [
+            gyulaKosice,
+            "ORIGINALCOPY x MFAH",
+            'FOR THEIR OPENING OF THEIR NEWEST EXHIBIT "Gyula Kosice: Intergalatic"',
+        ],
+        [
+            fallenAngel,
+            "ORIGINALCOPY x Fallen Angel",
+            "FOR THEIR LARGEST EOY SALE ON LINGERIE AND BELTS",
+        ],
+    ];
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-5">
-        <div
-          className="square"
-          style={{ backgroundImage: `url(${fifthVessel})` }}
-        >
-          <ReceiptCaption
-            title="ORIGINALCOPY x FIFTH VESSEL"
-            description="FOR THEIR GRAND OPENING EVENT WITH ISA MATCHA"
-          />
-        </div>
+    return (
+        <div className="section" id="portfolio">
+            <div className="heading">
+                <h1>PORTFOLIO</h1>
+                <h2>OUR RECEIPTS</h2>
+            </div>
 
-        <div
-          className="square"
-          style={{ backgroundImage: `url(${gyulaKosice})` }}
-        >
-          <ReceiptCaption
-            title="ORIGINALCOPY x MFAH"
-            description='
-              FOR THEIR OPENING OF THEIR NEWEST EXHIBIT
-              "Gyula Kosice: Intergalatic"'
-          />
+            <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-5">
+                {portfolioEntries.map((entry, index) => (
+                    <PortfolioCard
+                        key={index}
+                        backgroundImage={entry[0]}
+                        title={entry[1]}
+                        description={entry[2]}
+                    />
+                ))}
+            </div>
         </div>
-
-        <div
-          className="square"
-          style={{ backgroundImage: `url(${fallenAngel})` }}
-        >
-          <ReceiptCaption
-            title="ORIGINALCOPY x Fallen Angel"
-            description="FOR THEIR LARGEST EOY SALE ON LINGERIE AND BELTS"
-          />
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Portfolio;
