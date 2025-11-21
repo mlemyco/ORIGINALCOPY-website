@@ -1,6 +1,6 @@
 import "./Portfolio.scss";
 import fallenAngel from "../../assets/media/fallen-angel.jpg";
-import fifthVessel from "../../assets/media/Isa_Matcha_Image.png";
+import fifthVessel from "../../assets/media/Isa_Matcha_image.png";
 import gyulaKosice from "../../assets/media/gyula-kosice.jpg";
 import PortfolioCard from "../../components/PortfolioCard/PortfolioCard";
 
