@@ -148,7 +148,7 @@ const ContactForm = () => {
                     <p>{status}</p>
                 </div>
 
-                <div className="ml-auto">
+                <div className="col-span-3 ml-auto">
                     <Button onClickFn={sendEmail}>SUBMIT</Button>
                 </div>
             </div>

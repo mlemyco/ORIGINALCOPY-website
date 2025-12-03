@@ -1,18 +1,18 @@
-import "./Inquire.scss";
+import "./Contact.scss";
 import ContactForm from "./ContactForm/ContactForm";
 
-const Inquire = () => {
+const Contact = () => {
     return (
         <div className="section" id="inquire">
             <div className="w-full grid grid-cols-3">
                 <div className="col-span-1">
                     <div className="heading">
-                        <h1>INQUIRE</h1>
+                        <h1>CONTACT</h1>
                     </div>
                     <h3>
-                        OUR PACKAGES ARE UNIQUE TO EACH BUSINESS.
+                        GOT QUESTIONS?
                         <br />
-                        SO LET'S CHAT.
+                        WE GOT ANSWERS.
                     </h3>
                 </div>
 
@@ -22,4 +22,4 @@ const Inquire = () => {
     );
 };
 
-export default Inquire;
+export default Contact;

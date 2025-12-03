@@ -1,6 +1,6 @@
 import "./App.scss";
 import Home from "./pages/Home/Home";
-import Inquire from "./pages/Inquire/Inquire";
+import Contact from "./pages/Contact/Contact";
 import Portfolio from "./pages/Portfolio/Portfolio";
 import About from "./pages/About/About";
 // import Slideshow from "./components/Slideshow/Slideshow";
@@ -30,7 +30,7 @@ function App() {
             <Home />
             <Portfolio />
             <About />
-            <Inquire />
+            <Contact />
             {/* <Slideshow elements={examples} height={250} /> */}
             <img src={receiptPhotos} alt="" className="pb-10 px-5 w-full" />
             <Footer
