@@ -1,3 +1,5 @@
+import "./About.scss";
+
 import origin from "../../assets/media/about_us_hero_section_cropped.png";
 
 const About = () => {
@@ -20,7 +22,7 @@ const About = () => {
                 <img src={origin} />
             </div>
 
-            <div className="orange-bg w-full flex flex-col justify-center items-center gap-5 py-10 px-20 text-center">
+            <div className="orange-bg w-full flex flex-col justify-center items-center gap-5 text-center">
                 <p>
                     ORIGINALCOPY is a play on receipts, and an oxymoron on
                     real-time experiences and digital photos. They are seen as
