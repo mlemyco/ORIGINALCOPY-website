@@ -5,7 +5,7 @@ const Button = ({
     isDisabled = false,
     children,
 }: {
-    onClickFn: () => void;
+    onClickFn?: () => void;
     isDisabled?: boolean;
     children: React.ReactNode;
 }) => {
