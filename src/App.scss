@@ -95,7 +95,7 @@ a {
 }
 
 .subtitle {
-    font-size: 32px;
+    font-size: 18px;
 }
 
 input,
@@ -106,8 +106,28 @@ textarea {
     font-size: 24px;
 }
 
+.client-fav {
+    &::after {
+        content: "";
+        width: 80px;
+        height: 100px;
+        display: block;
+        background-image: url("/src/assets/media/CLIENT_FAVORITE_RIBBON.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(40%, -30%);
+    }
+}
+
 @media screen and (max-width: 1024px) {
     .section {
+        padding-left: 20px;
+        padding-right: 20px;
+
         .heading {
             h2 {
                 white-space: wrap;
@@ -130,6 +150,13 @@ textarea {
             h2 {
                 white-space: wrap;
             }
+        }
+    }
+
+    .client-fav {
+        &::after {
+            width: 50px;
+            height: 70px;
         }
     }
 }

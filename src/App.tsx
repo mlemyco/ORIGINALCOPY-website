@@ -14,6 +14,7 @@ import Footer from "./components/Footer/Footer";
 import receiptPhotos from "./assets/media/receipt_photo.png";
 import NewsletterPopup from "./pages/NewsletterPopup/NewsletterPopup";
 import { useState } from "react";
+import Offerings from "./pages/Offerings/Offerings";
 
 function App() {
     // const examples = [example1, example2, example3, example4, example5];
@@ -30,6 +31,7 @@ function App() {
             <Home />
             <Portfolio />
             <About />
+            <Offerings />
             <Contact />
             {/* <Slideshow elements={examples} height={250} /> */}
             <img src={receiptPhotos} alt="" className="pb-10 px-5 w-full" />
