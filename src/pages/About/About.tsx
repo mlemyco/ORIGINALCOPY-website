@@ -38,7 +38,7 @@ const About = () => {
                     for our booth.
                 </p>
 
-                <p className="subtitle">"turning the mundane into memories"</p>
+                <p>"turning the mundane into memories"</p>
             </div>
         </div>
     );
