@@ -1,4 +1,5 @@
 import "./ReceiptCaption.scss";
+import barcode from "../../../assets/media/barcode.png";
 
 const ReceiptCaption = ({
     title,
@@ -16,10 +17,7 @@ const ReceiptCaption = ({
                 <p>{description}</p>
             </div>
 
-            <img
-                src="https://static.vecteezy.com/system/resources/previews/048/230/807/non_2x/barcode-black-color-for-payment-vector.jpg"
-                alt=""
-            />
+            <img src={barcode} alt="" />
         </div>
     );
 };

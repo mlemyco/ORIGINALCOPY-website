@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Modal from "../../components/Modal/Modal";
 import Button from "../../components/Button/Button";
 import newsletterModalBg from "../../assets/media/7.png";
+import barcode from "../../assets/media/barcode.png";
 
 const NewsletterPopup = ({
     setIsOpen,
@@ -67,11 +68,7 @@ const NewsletterPopup = ({
 
                 <h4>we promise not to spam</h4>
 
-                <img
-                    src="https://static.vecteezy.com/system/resources/previews/048/230/807/non_2x/barcode-black-color-for-payment-vector.jpg"
-                    alt=""
-                    className="px-8"
-                />
+                <img src={barcode} alt="" className="px-8" />
             </Modal>
         </>
     );
