@@ -47,13 +47,27 @@ const NewsletterPopup = ({
                 <h2>SIGN UP FOR OUR NEWSLETTER</h2>
                 <h4>to follow our houston whereabouts</h4>
 
-                <input
-                    id="subscribe-email"
-                    className="w-full bg-white"
-                    type="email"
-                    placeholder="your email address..."
-                    onChange={handleEmailChange}
-                />
+                <div className="grid grid-cols-2 gap-1">
+                    <input
+                        id="first-name"
+                        className="bg-white"
+                        type="text"
+                        placeholder="first name"
+                    />
+                    <input
+                        id="last-name"
+                        className="bg-white"
+                        type="text"
+                        placeholder="last name"
+                    />
+                    <input
+                        id="subscribe-email"
+                        className="col-span-2 bg-white"
+                        type="email"
+                        placeholder="email address"
+                        onChange={handleEmailChange}
+                    />
+                </div>
 
                 {isSubscribed ? (
                     <h3>SUBSCRIBED!</h3>
