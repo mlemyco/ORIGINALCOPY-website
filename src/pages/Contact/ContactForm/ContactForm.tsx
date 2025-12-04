@@ -97,7 +97,7 @@ const ContactForm = () => {
     };
 
     return (
-        <form id="contact-form" className="col-span-2">
+        <form id="contact-form" className="col-span-2 pt-5">
             <div className="grid grid-cols-3 gap-2">
                 <p className="col-span-1 text-right">
                     <label htmlFor="email-input">your name</label>

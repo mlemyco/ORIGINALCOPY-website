@@ -27,7 +27,7 @@ const Home = () => {
                         <Link to="#about">ABOUT US</Link>
                     </h2>
                     <h2>
-                        <Link to="#inquire">INQUIRE</Link>
+                        <Link to="#contact">CONTACT</Link>
                     </h2>
                     <Link
                         to={
