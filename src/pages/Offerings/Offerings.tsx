@@ -1,4 +1,4 @@
-import communityEvents from "../../assets/media/COMMUNITY_EVENTS.png";
+import communityEventsGif from "../../assets/media/COMMUNITY_EVENTS.gif";
 import personalEventsGif from "../../assets/media/PERSONAL_EVENTS_GIF.gif";
 // import photoframes from "../../assets/media/photoframes_image.png";
 import leftPhotoframe from "../../assets/media/photoframes_image_left.png";
@@ -16,7 +16,7 @@ const Offerings = () => {
 
                 <div className="grid md:grid-cols-2">
                     <div className="text-center md:px-10 py-4">
-                        <img src={communityEvents} alt="" />
+                        <img src={communityEventsGif} alt="" />
                         <h2>COMMUNITY EVENTS</h2>
                         <h3>EX: BRAND ACTIVATIONS, GRAND OPENINGS</h3>
                     </div>
