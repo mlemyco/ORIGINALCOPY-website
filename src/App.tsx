@@ -13,7 +13,7 @@ import Footer from "./components/Footer/Footer";
 // import example5 from "./assets/media/examples/example-5.png";
 import receiptPhotos from "./assets/media/receipt_photo.png";
 import NewsletterPopup from "./pages/NewsletterPopup/NewsletterPopup";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Offerings from "./pages/Offerings/Offerings";
 
 function App() {
@@ -21,6 +21,21 @@ function App() {
 
     const [isNewsletterSubscribeOpen, setIsNewsletterSubscribeOpen] =
         useState(false);
+
+    useEffect(() => {
+        setTimeout(() => {
+            const hasSubscribed = localStorage.getItem("hasSubscribed");
+            const dismissedSubscribe =
+                localStorage.getItem("dismissedSubscribe");
+
+            console.log("hasSubscribed:", hasSubscribed);
+            console.log("dismissedSubscribe:", dismissedSubscribe);
+
+            if (!hasSubscribed && !dismissedSubscribe) {
+                setIsNewsletterSubscribeOpen(true);
+            }
+        }, 2000);
+    }, []);
 
     return (
         <>

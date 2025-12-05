@@ -30,13 +30,22 @@ const NewsletterPopup = ({
 
     const subscribeToNewsletter = async () => {
         console.log("subscribing");
+        localStorage.setItem("hasSubscribed", "true");
         setIsOpen(false);
         postSubscribe(email, firstName, lastName);
     };
 
+    const dismissPopup = () => {
+        localStorage.setItem("dismissedSubscribe", "true");
+    };
+
     return (
         <>
-            <Modal backgroundImage={newsletterModalBg} setIsOpen={setIsOpen}>
+            <Modal
+                backgroundImage={newsletterModalBg}
+                setIsOpen={setIsOpen}
+                onClose={dismissPopup}
+            >
                 <h2>SIGN UP FOR OUR NEWSLETTER</h2>
                 <h4>to follow our houston whereabouts</h4>
 
