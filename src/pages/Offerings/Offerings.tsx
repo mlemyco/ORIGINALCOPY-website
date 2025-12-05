@@ -4,8 +4,8 @@ import personalEventsGif from "../../assets/media/PERSONAL_EVENTS_GIF.gif";
 import leftPhotoframe from "../../assets/media/photoframes_image_left.png";
 import rightPhotoframe from "../../assets/media/photoframes_image_right.png";
 // import photoholders from "../../assets/media/photoholders_image.png";
-import leftPhotoholder from "../../assets/media/photoholders_image_left.png";
-import rightPhotoholder from "../../assets/media/photoholders_image_right.png";
+import leftPhotoholder from "../../assets/media/PHOTOHOLDERS_left.png";
+import rightPhotoholder from "../../assets/media/PHOTOHOLDERS_right.png";
 import ClientFav from "../../components/ClientFav/ClientFav";
 
 const Offerings = () => {
@@ -54,7 +54,7 @@ const Offerings = () => {
                         </div>
                     </div>
 
-                    <div className="text-center md:px-10 py-4">
+                    <div className="text-center md:px-10 py-4 flex flex-col justify-between">
                         <h2>PHOTOHOLDERS</h2>
                         {/* <img
                             className="client-favorite"
@@ -63,28 +63,30 @@ const Offerings = () => {
                         /> */}
 
                         <div className="grid grid-cols-2">
-                            <img
-                                src={leftPhotoholder}
-                                alt=""
-                                className="h-full"
-                            />
+                            <div className="h-full flex items-center">
+                                <img
+                                    src={leftPhotoholder}
+                                    alt=""
+                                    className=""
+                                />
+                            </div>
                             <ClientFav>
                                 <img
                                     src={rightPhotoholder}
                                     alt=""
-                                    className="h-full"
+                                    className=""
                                 />
                             </ClientFav>
                             <h3>STANDARD</h3>
                             <h3>CUSTOM</h3>
                         </div>
 
-                        <p className="subtitle">
+                        {/* <p className="subtitle">
                             *DIFFERENCE IN COLOR IS DUE TO LIGHTING.
                             <br />
                             100 GSM IVORY WHITE VELLUM PAPER IS USED TO MAKE OUR
                             PHOTOHOLDERS.
-                        </p>
+                        </p> */}
                     </div>
                 </div>
             </div>
