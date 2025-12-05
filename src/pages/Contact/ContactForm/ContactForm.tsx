@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Button from "../../../components/Button/Button";
 
@@ -16,13 +16,6 @@ const ContactForm = () => {
     const nameRef = useRef<HTMLInputElement>(null);
     const emailRef = useRef<HTMLInputElement>(null);
     const messageRef = useRef<HTMLTextAreaElement>(null);
-
-    useEffect(() => {
-        console.log(name);
-        if (name == "") {
-            console.log("name is empty");
-        }
-    }, [name]);
 
     const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setName(e.target.value);
