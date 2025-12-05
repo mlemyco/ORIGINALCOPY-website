@@ -3,6 +3,7 @@ import Modal from "../../components/Modal/Modal";
 import Button from "../../components/Button/Button";
 import newsletterModalBg from "../../assets/media/7.png";
 import barcode from "../../assets/media/barcode.png";
+import { postSubscribe } from "../../services/subscribeService";
 
 const NewsletterPopup = ({
     setIsOpen,
@@ -10,8 +11,17 @@ const NewsletterPopup = ({
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
     const [email, setEmail] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
     const [isEmailValid, setIsEmailValid] = useState(false);
-    const [isSubscribed, setIsSubscribed] = useState(false);
+
+    const handleFirstNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setFirstName(e.target.value);
+    };
+
+    const handleLastNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setLastName(e.target.value);
+    };
 
     const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value);
@@ -19,26 +29,9 @@ const NewsletterPopup = ({
     };
 
     const subscribeToNewsletter = async () => {
-        // fetch("/subscribers", {
-        //     method: "GET",
-        //     headers: { "Content-Type": "application/json" },
-        // }).then((response) => {
-        //     console.log(response.json());
-        // });
-
         console.log("subscribing");
-        setIsSubscribed(true);
-
-        //     fetch("/subscribers", {
-        // method: "POST",
-        //         headers: { "Content-Type": "application/json" },
-        //         body: JSON.stringify({ email }),
-        //     })
-        //     .then((response) => {
-        //         if (response.status >= 200 && response.status < 300) {
-        //             setIsSubscribed(true);
-        //         }
-        //     });
+        setIsOpen(false);
+        postSubscribe(email, firstName, lastName);
     };
 
     return (
@@ -53,12 +46,14 @@ const NewsletterPopup = ({
                         className="bg-white"
                         type="text"
                         placeholder="first name"
+                        onChange={handleFirstNameChange}
                     />
                     <input
                         id="last-name"
                         className="bg-white"
                         type="text"
                         placeholder="last name"
+                        onChange={handleLastNameChange}
                     />
                     <input
                         id="subscribe-email"
@@ -69,16 +64,12 @@ const NewsletterPopup = ({
                     />
                 </div>
 
-                {isSubscribed ? (
-                    <h3>SUBSCRIBED!</h3>
-                ) : (
-                    <Button
-                        onClickFn={subscribeToNewsletter}
-                        isDisabled={email == "" || !isEmailValid}
-                    >
-                        JOIN
-                    </Button>
-                )}
+                <Button
+                    onClickFn={subscribeToNewsletter}
+                    isDisabled={email == "" || !isEmailValid}
+                >
+                    JOIN
+                </Button>
 
                 <h4>we promise not to spam</h4>
 
