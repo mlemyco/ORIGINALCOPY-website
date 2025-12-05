@@ -93,17 +93,18 @@ const ContactForm = () => {
         <form id="contact-form" className="col-span-2 pt-5">
             <div className="grid grid-cols-3 gap-2">
                 <p className="col-span-1 text-right">
-                    <label htmlFor="email-input">your name</label>
+                    <label htmlFor="name-input">your name</label>
                 </p>
                 <div className="col-span-2">
                     <input
                         type="text"
-                        id="email-input"
+                        id="name-input"
                         className="size-full"
                         name="name"
                         required
                         onChange={handleNameChange}
                         ref={nameRef}
+                        autoComplete="name"
                     />
                 </div>
 
@@ -119,6 +120,7 @@ const ContactForm = () => {
                         required
                         onChange={handleEmailChange}
                         ref={emailRef}
+                        autoComplete="email"
                     />
                 </div>
 
